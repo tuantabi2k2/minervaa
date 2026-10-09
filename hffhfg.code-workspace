@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../hffhfg"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "minerva"
+	}
+}

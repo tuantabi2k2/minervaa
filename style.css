@@ -1,0 +1,333 @@
+/* =========================================
+   1. CÀI ĐẶT CHUNG (RESET & VARIABLES)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Cuộn mượt khi click vào menu */
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Xám nhạt mang lại cảm giác y tế sạch sẽ */
+}
+
+/* Định dạng tiêu đề chung */
+h1, h2, h3 {
+    color: #0056b3; /* Xanh dương đậm chuẩn y tế */
+    margin-bottom: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Đường kẻ gạch dưới tiêu đề h2 */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00a8ff;
+    margin: 10px auto 0;
+}
+
+/* Khung giới hạn độ rộng cho các section */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. HEADER & MENU
+========================================= */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+/* =========================================
+   3. HERO SECTION (BANNER)
+========================================= */
+#hero {
+    max-width: 100%; /* Hero full màn hình */
+    background: linear-gradient(135deg, #004080, #00a8ff);
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+#hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. VỀ CHÚNG TÔI
+========================================= */
+/* Sử dụng CSS Grid để chia 3 cột đều nhau */
+#ve-chung-toi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#ve-chung-toi h2 {
+    grid-column: 1 / -1; /* Tiêu đề chiếm toàn bộ hàng ngang */
+}
+
+#ve-chung-toi > div {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #00a8ff;
+}
+
+.nguyen-tac ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* =========================================
+   5. CƠ CẤU TỔ CHỨC
+========================================= */
+#co-cau-to-chuc {
+    background-color: #fff;
+    max-width: 100%; /* Cho nền trắng full ngang */
+    text-align: center;
+}
+
+#co-cau-to-chuc img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   6. SẢN PHẨM & GIẢI PHÁP
+========================================= */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1; /* Các thẻ rộng bằng nhau */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Hiệu ứng nảy lên khi hover */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.download-section {
+    text-align: center;
+}
+
+.download-section a {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.download-section a:hover {
+    background-color: #003d82;
+}
+
+/* =========================================
+   7. VÌ SAO CHỌN VIETRAD
+========================================= */
+#vi-sao-chon-vietrad {
+    background-color: #fff;
+    max-width: 100%;
+}
+
+#vi-sao-chon-vietrad ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#vi-sao-chon-vietrad li {
+    font-size: 1.2rem;
+    padding: 15px 0 15px 40px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+/* Tạo icon dấu tích xanh bằng CSS */
+#vi-sao-chon-vietrad li::before {
+    content: "✔";
+    color: #28a745;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+/* =========================================
+   8. ĐỐI TÁC
+========================================= */
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logo-grid img {
+    max-width: 150px;
+    filter: grayscale(100%); /* Ảnh mặc định màu xám */
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.logo-grid img:hover {
+    filter: grayscale(0%); /* Hover hiện màu thật */
+    opacity: 1;
+}
+
+/* =========================================
+   9. LIÊN HỆ
+========================================= */
+#lien-he {
+    background-color: #fff;
+    max-width: 100%;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-info a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+#footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#footer p {
+    margin-bottom: 10px;
+}
+
+#footer a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#footer a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   11. RESPONSIVE (MÀN HÌNH ĐIỆN THOẠI)
+========================================= */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #ve-chung-toi {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
